@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import styled from "styled-components";
-import "./App.css";
 import ImageBox from "./components/ImageBox";
 
 const Container = styled.div`
@@ -26,6 +25,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     line-height: 24px;
+    cursor: pointer;
   }
 
   .gallery-box {
@@ -34,7 +34,6 @@ const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     gap: 80px;
-    cursor: pointer;
   }
 
   .row {
@@ -75,7 +74,7 @@ const Container = styled.div`
   }
 `;
 
-function App() {
+const App: React.FC = () => {
   const [imageList, setImageList] = useState<string[]>([]);
 
   // react-dropzone
@@ -116,6 +115,6 @@ function App() {
       </div>
     </Container>
   );
-}
+};
 
 export default App;
